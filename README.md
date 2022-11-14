@@ -2,7 +2,7 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://git.gft.com/boer/desafio-api/-/blob/main/LICENSE)
 
 ## Descrição
-Desafio prático sobre a implementação de uma REST API para um sistema de clínica veterinária utilizando o framework Spring. Segue as principais funcionalidades da aplicação:
+Implementação de uma REST API para um sistema de clínica veterinária utilizando o framework Spring. Segue as principais funcionalidades da aplicação:
 - CRUD de todas as classes;
 - Validações nos atributos das classes;
 - Integração com banco de dados MySQL;
