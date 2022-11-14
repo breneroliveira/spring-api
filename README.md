@@ -1,5 +1,5 @@
 # Desafio API
-[![NPM](https://img.shields.io/npm/l/react)](https://git.gft.com/boer/desafio-api/-/blob/main/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/breneroliveira/spring-api/blob/master/LICENSE)
 
 ## Descrição
 Implementação de uma REST API para um sistema de clínica veterinária utilizando o framework Spring. Segue as principais funcionalidades da aplicação:
