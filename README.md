@@ -113,4 +113,4 @@ Testes unitários foram implementados com o JUnit 5:
 Se você possui todos os requisitos, seguiu todas as instruções de como executar a aplicação e mesmo assim está com problemas, pode mandar um email por <a href="mailto:brener.oliveira@gft.com? subject=subject text">aqui</a> constatando o erro.
 
 ## Autor
-Brener Augusto de Oliveira
+<a href="https://www.linkedin.com/in/brener-augusto-de-oliveira/" target="_blank">Brener Augusto de Oliveira</a>
