@@ -19,7 +19,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 - Eclipse IDE for Enterprise Java and Web Developers 4.23.0
 
 ## Diagrama de classes
-![image](/uploads/b71ab880cd4c0a9ad2290aa821f3e726/image.png)
+![UML - 26 07](https://user-images.githubusercontent.com/73718076/201680027-28abc606-3021-4d4a-9640-0d58a698cd83.png)
 
 ## Instalação e execução
 Para deixar o projeto pronto para a execução, os seguintes passos devem ser seguidos:
