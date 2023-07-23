@@ -1,4 +1,4 @@
-package com.veterinaria.dto.auth;
+package com.veterinaria.dtos;
 
 public class AutenticacaoDTO {
 

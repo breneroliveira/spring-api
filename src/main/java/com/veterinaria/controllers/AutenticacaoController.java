@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.veterinaria.dto.auth.AutenticacaoDTO;
-import com.veterinaria.dto.auth.TokenDTO;
+import com.veterinaria.dtos.AutenticacaoDTO;
+import com.veterinaria.dtos.TokenDTO;
 import com.veterinaria.services.AutenticacaoService;
 
 @RestController

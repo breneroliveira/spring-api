@@ -1,10 +1,9 @@
-package com.veterinaria.dto.cliente;
+package com.veterinaria.dtos;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.veterinaria.dto.endereco.EnderecoDTO;
 import com.veterinaria.entities.Cachorro;
 
 public class RegistroClienteDTO {

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.veterinaria.mappers.CachorroMapper;
-import com.veterinaria.dto.cachorro.ConsultaCachorroDTO;
-import com.veterinaria.dto.cachorro.RegistroCachorroDTO;
+import com.veterinaria.dtos.ConsultaCachorroDTO;
+import com.veterinaria.dtos.RegistroCachorroDTO;
 import com.veterinaria.entities.Cachorro;
 import com.veterinaria.services.CachorroService;
 

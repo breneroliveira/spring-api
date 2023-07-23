@@ -43,8 +43,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
-import com.veterinaria.dto.raca.ConsultaRacaDTO;
-import com.veterinaria.dto.raca.RegistroRacaDTO;
+import com.veterinaria.dtos.raca.ConsultaRacaDTO;
+import com.veterinaria.dtos.raca.RegistroRacaDTO;
 import com.veterinaria.entities.Raca;
 import com.veterinaria.services.RacaService;
 

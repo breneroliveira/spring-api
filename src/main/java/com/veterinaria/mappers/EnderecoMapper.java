@@ -1,6 +1,6 @@
 package com.veterinaria.mappers;
 
-import com.veterinaria.dto.endereco.EnderecoDTO;
+import com.veterinaria.dtos.EnderecoDTO;
 import com.veterinaria.entities.Endereco;
 
 public class EnderecoMapper {

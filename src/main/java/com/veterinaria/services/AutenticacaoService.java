@@ -1,7 +1,11 @@
 package com.veterinaria.services;
 
-import java.util.Date;
-
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.veterinaria.dtos.AutenticacaoDTO;
+import com.veterinaria.dtos.TokenDTO;
+import com.veterinaria.entities.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
@@ -11,12 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Service;
 
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.veterinaria.dto.auth.AutenticacaoDTO;
-import com.veterinaria.dto.auth.TokenDTO;
-import com.veterinaria.entities.Usuario;
+import java.util.Date;
 
 @Service
 public class AutenticacaoService {

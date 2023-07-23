@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.veterinaria.dto.imagem.ConsultaImagemDTO;
-import com.veterinaria.dto.raca.ConsultaRacaDTO;
+import com.veterinaria.dtos.imagem.ConsultaImagemDTO;
+import com.veterinaria.dtos.ConsultaRacaDTO;
 import com.veterinaria.mappers.RacaMapper;
-import com.veterinaria.dto.raca.RegistroRacaDTO;
+import com.veterinaria.dtos.RegistroRacaDTO;
 import com.veterinaria.entities.Raca;
 import com.veterinaria.services.RacaService;
 

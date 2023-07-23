@@ -1,4 +1,4 @@
-package com.veterinaria.dto;
+package com.veterinaria.dtos;
 
 import java.util.Arrays;
 import java.util.List;

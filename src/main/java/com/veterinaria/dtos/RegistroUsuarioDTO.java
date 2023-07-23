@@ -1,4 +1,4 @@
-package com.veterinaria.dto.usuario;
+package com.veterinaria.dtos;
 
 public class RegistroUsuarioDTO {
 

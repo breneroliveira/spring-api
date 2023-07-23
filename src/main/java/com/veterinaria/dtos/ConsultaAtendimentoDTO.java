@@ -1,4 +1,4 @@
-package com.veterinaria.dto.atendimento;
+package com.veterinaria.dtos;
 
 import java.time.LocalDateTime;
 

@@ -1,7 +1,7 @@
 package com.veterinaria.mappers;
 
-import com.veterinaria.dto.medico.ConsultaMedicoDTO;
-import com.veterinaria.dto.medico.RegistroMedicoDTO;
+import com.veterinaria.dtos.ConsultaMedicoDTO;
+import com.veterinaria.dtos.RegistroMedicoDTO;
 import com.veterinaria.entities.Medico;
 
 public class MedicoMapper {

@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.veterinaria.dto.medico.ConsultaMedicoDTO;
+import com.veterinaria.dtos.ConsultaMedicoDTO;
 import com.veterinaria.mappers.MedicoMapper;
-import com.veterinaria.dto.medico.RegistroMedicoDTO;
+import com.veterinaria.dtos.RegistroMedicoDTO;
 import com.veterinaria.entities.Medico;
 import com.veterinaria.services.MedicoService;
 

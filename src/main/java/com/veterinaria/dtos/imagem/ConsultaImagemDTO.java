@@ -1,4 +1,4 @@
-package com.veterinaria.dto.imagem;
+package com.veterinaria.dtos.imagem;
 
 import java.util.HashSet;
 import java.util.Set;

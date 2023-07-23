@@ -35,10 +35,10 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
-import com.veterinaria.dto.endereco.EnderecoDTO;
-import com.veterinaria.dto.especialidade.EspecialidadeDTO;
-import com.veterinaria.dto.medico.MedicoMapper;
-import com.veterinaria.dto.medico.RegistroMedicoDTO;
+import com.veterinaria.dtos.endereco.EnderecoDTO;
+import com.veterinaria.dtos.especialidade.EspecialidadeDTO;
+import com.veterinaria.dtos.medico.MedicoMapper;
+import com.veterinaria.dtos.medico.RegistroMedicoDTO;
 import com.veterinaria.entities.Endereco;
 import com.veterinaria.entities.Especialidade;
 import com.veterinaria.entities.Medico;

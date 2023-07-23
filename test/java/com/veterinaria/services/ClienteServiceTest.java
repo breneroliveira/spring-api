@@ -35,9 +35,9 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
-import com.veterinaria.dto.cliente.ClienteMapper;
-import com.veterinaria.dto.cliente.RegistroClienteDTO;
-import com.veterinaria.dto.endereco.EnderecoDTO;
+import com.veterinaria.dtos.cliente.ClienteMapper;
+import com.veterinaria.dtos.cliente.RegistroClienteDTO;
+import com.veterinaria.dtos.endereco.EnderecoDTO;
 import com.veterinaria.entities.Cliente;
 import com.veterinaria.entities.Endereco;
 import com.veterinaria.exceptions.EntityNotFoundException;

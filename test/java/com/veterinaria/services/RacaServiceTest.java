@@ -34,8 +34,8 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
-import com.veterinaria.dto.raca.RacaMapper;
-import com.veterinaria.dto.raca.RegistroRacaDTO;
+import com.veterinaria.dtos.raca.RacaMapper;
+import com.veterinaria.dtos.raca.RegistroRacaDTO;
 import com.veterinaria.entities.Raca;
 import com.veterinaria.exceptions.EntityNotFoundException;
 import com.veterinaria.exceptions.VeterinariaException;

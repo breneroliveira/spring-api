@@ -1,4 +1,4 @@
-package com.veterinaria.dto.raca;
+package com.veterinaria.dtos;
 
 public class RegistroRacaDTO {
 

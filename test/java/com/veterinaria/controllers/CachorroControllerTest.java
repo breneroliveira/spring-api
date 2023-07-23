@@ -45,8 +45,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
-import com.veterinaria.dto.cachorro.ConsultaCachorroDTO;
-import com.veterinaria.dto.cachorro.RegistroCachorroDTO;
+import com.veterinaria.dtos.cachorro.ConsultaCachorroDTO;
+import com.veterinaria.dtos.cachorro.RegistroCachorroDTO;
 import com.veterinaria.entities.Cachorro;
 import com.veterinaria.entities.Cliente;
 import com.veterinaria.entities.Endereco;

@@ -1,4 +1,4 @@
-package com.veterinaria.dto.especialidade;
+package com.veterinaria.dtos;
 
 public class EspecialidadeDTO {
 

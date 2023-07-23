@@ -1,4 +1,4 @@
-package com.veterinaria.dto.raca;
+package com.veterinaria.dtos;
 
 import java.io.Serializable;
 

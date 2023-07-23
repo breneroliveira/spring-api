@@ -1,7 +1,7 @@
 package com.veterinaria.mappers;
 
-import com.veterinaria.dto.cliente.ConsultaClienteDTO;
-import com.veterinaria.dto.cliente.RegistroClienteDTO;
+import com.veterinaria.dtos.ConsultaClienteDTO;
+import com.veterinaria.dtos.RegistroClienteDTO;
 import com.veterinaria.entities.Cliente;
 
 public class ClienteMapper {

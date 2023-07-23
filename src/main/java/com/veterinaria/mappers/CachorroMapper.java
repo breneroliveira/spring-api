@@ -1,7 +1,7 @@
 package com.veterinaria.mappers;
 
-import com.veterinaria.dto.cachorro.ConsultaCachorroDTO;
-import com.veterinaria.dto.cachorro.RegistroCachorroDTO;
+import com.veterinaria.dtos.ConsultaCachorroDTO;
+import com.veterinaria.dtos.RegistroCachorroDTO;
 import com.veterinaria.entities.Cachorro;
 
 public class CachorroMapper {

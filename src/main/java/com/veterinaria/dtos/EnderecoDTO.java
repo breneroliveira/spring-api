@@ -1,4 +1,4 @@
-package com.veterinaria.dto.endereco;
+package com.veterinaria.dtos;
 
 public class EnderecoDTO {
 
