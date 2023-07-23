@@ -1,12 +1,13 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.responses;
 
 import java.time.LocalDateTime;
 
 import com.veterinaria.entities.Cachorro;
 import com.veterinaria.entities.Medico;
 
-public class RegistroAtendimentoDTO {
+public class AtendimentoResponseDTO {
 
+	private Long id;
 	private String ticket;
 	private Medico medico;
 	private Cachorro cachorro;
@@ -16,20 +17,29 @@ public class RegistroAtendimentoDTO {
 	private String diagnostico;
 	private String comentario;
 	
-	public RegistroAtendimentoDTO() {
+	public AtendimentoResponseDTO() {
 		
 	}
 
-	public RegistroAtendimentoDTO(String ticket, Medico medico, Cachorro cachorro, LocalDateTime dataHora, Double pesoAtual,
-			Double alturaAtual, String diagnostico, String comentario) {
+	public AtendimentoResponseDTO(Long id, String ticket, Medico medico, Cachorro cachorro, Double pesoAtual, Double alturaAtual,
+								  LocalDateTime dataHora, String diagnostico, String comentario) {
+		this.id = id;
 		this.ticket = ticket;
 		this.medico = medico;
 		this.cachorro = cachorro;
-		this.dataHora = dataHora;
 		this.pesoAtual = pesoAtual;
 		this.alturaAtual = alturaAtual;
+		this.dataHora = dataHora;
 		this.diagnostico = diagnostico;
 		this.comentario = comentario;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getTicket() {
@@ -94,5 +104,5 @@ public class RegistroAtendimentoDTO {
 
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
-	}	
+	}
 }

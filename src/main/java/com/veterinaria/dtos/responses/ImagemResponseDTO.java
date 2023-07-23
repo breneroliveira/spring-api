@@ -1,11 +1,11 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.responses;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import com.veterinaria.entities.Raca;
 
-public class ConsultaImagemDTO {
+public class ImagemResponseDTO {
 
 	private String id;
 	private Set<Raca> breeds = new HashSet<>();
@@ -13,11 +13,11 @@ public class ConsultaImagemDTO {
 	private Double width;
 	private Double height;
 	
-	public ConsultaImagemDTO() {
+	public ImagemResponseDTO() {
 		
 	}
 
-	public ConsultaImagemDTO(String id, Set<Raca> breeds, String url, Double width, Double height) {
+	public ImagemResponseDTO(String id, Set<Raca> breeds, String url, Double width, Double height) {
 		this.id = id;
 		this.breeds = breeds;
 		this.url = url;

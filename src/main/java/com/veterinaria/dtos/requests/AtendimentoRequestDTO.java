@@ -1,13 +1,12 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.requests;
 
 import java.time.LocalDateTime;
 
 import com.veterinaria.entities.Cachorro;
 import com.veterinaria.entities.Medico;
 
-public class ConsultaAtendimentoDTO {
+public class AtendimentoRequestDTO {
 
-	private Long id;
 	private String ticket;
 	private Medico medico;
 	private Cachorro cachorro;
@@ -17,29 +16,20 @@ public class ConsultaAtendimentoDTO {
 	private String diagnostico;
 	private String comentario;
 	
-	public ConsultaAtendimentoDTO() {
+	public AtendimentoRequestDTO() {
 		
 	}
 
-	public ConsultaAtendimentoDTO(Long id, String ticket, Medico medico, Cachorro cachorro, Double pesoAtual, Double alturaAtual,
-			LocalDateTime dataHora, String diagnostico, String comentario) {
-		this.id = id;
+	public AtendimentoRequestDTO(String ticket, Medico medico, Cachorro cachorro, LocalDateTime dataHora, Double pesoAtual,
+								 Double alturaAtual, String diagnostico, String comentario) {
 		this.ticket = ticket;
 		this.medico = medico;
 		this.cachorro = cachorro;
+		this.dataHora = dataHora;
 		this.pesoAtual = pesoAtual;
 		this.alturaAtual = alturaAtual;
-		this.dataHora = dataHora;
 		this.diagnostico = diagnostico;
 		this.comentario = comentario;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getTicket() {
@@ -104,5 +94,5 @@ public class ConsultaAtendimentoDTO {
 
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
-	}
+	}	
 }

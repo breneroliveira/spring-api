@@ -1,4 +1,4 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.responses;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -8,8 +8,9 @@ import com.veterinaria.entities.Atendimento;
 import com.veterinaria.entities.Cliente;
 import com.veterinaria.entities.Raca;
 
-public class RegistroCachorroDTO {
+public class CachorroResponseDTO {
 
+	private Long id;
 	private String numeroRegistro;
 	private String nome;
 	private Raca raca;
@@ -19,12 +20,13 @@ public class RegistroCachorroDTO {
 	private Cliente cliente;
 	private Set<Atendimento> atendimentos = new HashSet<>();
 	
-	public RegistroCachorroDTO() {
+	public CachorroResponseDTO() {
 		
 	}
 	
-	public RegistroCachorroDTO(String numeroRegistro, String nome, Raca raca, Double peso, Double altura,
-			Date dataNascimento, Cliente cliente) {
+	public CachorroResponseDTO(Long id, String numeroRegistro, String nome, Raca raca, Double peso, Double altura,
+							   Date dataNascimento, Cliente cliente) {
+		this.id = id;
 		this.numeroRegistro = numeroRegistro;
 		this.nome = nome;
 		this.raca = raca;
@@ -34,8 +36,9 @@ public class RegistroCachorroDTO {
 		this.cliente = cliente;
 	}
 
-	public RegistroCachorroDTO(String numeroRegistro, String nome, Raca raca, Double peso, Double altura,
-			Date dataNascimento, Cliente cliente, Set<Atendimento> atendimentos) {
+	public CachorroResponseDTO(Long id, String numeroRegistro, String nome, Raca raca, Double peso, Double altura,
+							   Date dataNascimento, Cliente cliente, Set<Atendimento> atendimentos) {
+		this.id = id;
 		this.numeroRegistro = numeroRegistro;
 		this.nome = nome;
 		this.raca = raca;
@@ -44,6 +47,14 @@ public class RegistroCachorroDTO {
 		this.dataNascimento = dataNascimento;
 		this.cliente = cliente;
 		this.atendimentos = atendimentos;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNumeroRegistro() {

@@ -1,43 +1,42 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.requests;
+
+import com.veterinaria.dtos.EnderecoDTO;
+import com.veterinaria.entities.Cachorro;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.veterinaria.entities.Cachorro;
+public class ClienteRequestDTO {
 
-public class ConsultaClienteDTO {
-
-	private Long id;
 	private String cpf;
 	private String nome;
 	private String telefone;
 	private Date dataNascimento;
-	private Set<Cachorro> cachorros = new HashSet<Cachorro>();
+	private Set<Cachorro> cachorros = new HashSet<>();
 	private EnderecoDTO endereco;
 	
-	public ConsultaClienteDTO() {
+	public ClienteRequestDTO() {
 		
 	}
+	
+	public ClienteRequestDTO(String cpf, String nome, String telefone, Date dataNascimento,
+							 EnderecoDTO endereco) {
+		this.cpf = cpf;
+		this.nome = nome;
+		this.telefone = telefone;
+		this.dataNascimento = dataNascimento;
+		this.endereco = endereco;
+	}
 
-	public ConsultaClienteDTO(Long id, String cpf, String nome, String telefone, Date dataNascimento,
-			Set<Cachorro> cachorros, EnderecoDTO endereco) {
-		super();
-		this.id = id;
+	public ClienteRequestDTO(String cpf, String nome, String telefone, Date dataNascimento,
+							 Set<Cachorro> cachorros, EnderecoDTO endereco) {
 		this.cpf = cpf;
 		this.nome = nome;
 		this.telefone = telefone;
 		this.dataNascimento = dataNascimento;
 		this.cachorros = cachorros;
 		this.endereco = endereco;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getCpf() {

@@ -1,16 +1,16 @@
 package com.veterinaria.mappers;
 
-import com.veterinaria.dtos.ConsultaRacaDTO;
-import com.veterinaria.dtos.RegistroRacaDTO;
+import com.veterinaria.dtos.responses.RacaResponseDTO;
+import com.veterinaria.dtos.requests.RacaRequestDTO;
 import com.veterinaria.entities.Raca;
 
 public class RacaMapper {
 
-	public static Raca fromDTO(RegistroRacaDTO dto) {
+	public static Raca fromDTO(RacaRequestDTO dto) {
 		return new Raca(null, dto.getNome());
 	}
 	
-	public static ConsultaRacaDTO fromEntity(Raca raca) {
-		return new ConsultaRacaDTO(raca.getId(), raca.getNome());
+	public static RacaResponseDTO fromEntity(Raca raca) {
+		return new RacaResponseDTO(raca.getId(), raca.getNome());
 	}
 }

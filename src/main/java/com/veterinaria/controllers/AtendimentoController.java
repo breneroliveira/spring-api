@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.veterinaria.mappers.AtendimentoMapper;
-import com.veterinaria.dtos.ConsultaAtendimentoDTO;
-import com.veterinaria.dtos.RegistroAtendimentoDTO;
+import com.veterinaria.dtos.responses.AtendimentoResponseDTO;
+import com.veterinaria.dtos.requests.AtendimentoRequestDTO;
 import com.veterinaria.entities.Atendimento;
 import com.veterinaria.services.AtendimentoService;
 
@@ -30,14 +30,14 @@ public class AtendimentoController {
 	
 	@GetMapping
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
-	public ResponseEntity<Page<ConsultaAtendimentoDTO>> buscarTodosOsAtendimentos(@PageableDefault Pageable pageable) {
+	public ResponseEntity<Page<AtendimentoResponseDTO>> buscarTodosOsAtendimentos(@PageableDefault Pageable pageable) {
 		
 		return ResponseEntity.ok(atendimentoService.listarTodosOsAtendimentos(pageable).map(AtendimentoMapper::fromEntity)); 
 	}
 	
 	@PostMapping
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaAtendimentoDTO> salvarAtendimento(@RequestBody RegistroAtendimentoDTO dto) {
+	public ResponseEntity<AtendimentoResponseDTO> salvarAtendimento(@RequestBody AtendimentoRequestDTO dto) {
 		
 		Atendimento atendimento = atendimentoService.salvarAtendimento(AtendimentoMapper.fromDTO(dto));
 		
@@ -46,7 +46,7 @@ public class AtendimentoController {
 	
 	@GetMapping("{id}")
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
-	public ResponseEntity<ConsultaAtendimentoDTO> buscarAtendimento(@PathVariable Long id) {
+	public ResponseEntity<AtendimentoResponseDTO> buscarAtendimento(@PathVariable Long id) {
 
 		Atendimento atendimento = atendimentoService.buscarAtendimento(id);
 		

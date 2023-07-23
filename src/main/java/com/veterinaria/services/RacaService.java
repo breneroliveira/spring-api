@@ -11,7 +11,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.veterinaria.dtos.ConsultaImagemDTO;
+import com.veterinaria.dtos.responses.ImagemResponseDTO;
 import com.veterinaria.entities.Raca;
 import com.veterinaria.exceptions.DuplicateEntityException;
 import com.veterinaria.exceptions.EntityNotFoundException;
@@ -57,15 +57,15 @@ public class RacaService {
 		return raca;
 	}
 	
-	public List<ConsultaImagemDTO> getImagemDogApi() {
+	public List<ImagemResponseDTO> getImagemDogApi() {
 		
-		Mono<List<ConsultaImagemDTO>> monoRaca =  this.webClient
+		Mono<List<ImagemResponseDTO>> monoRaca =  this.webClient
 			.method(HttpMethod.GET)
 			.uri("/images/search")
 			.retrieve()
-			.bodyToFlux(ConsultaImagemDTO.class).collect(Collectors.toList());
+			.bodyToFlux(ImagemResponseDTO.class).collect(Collectors.toList());
 		
-		List<ConsultaImagemDTO> imagem = monoRaca.block();
+		List<ImagemResponseDTO> imagem = monoRaca.block();
 		
 		return imagem;
 	}

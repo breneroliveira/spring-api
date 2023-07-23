@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.veterinaria.mappers.ClienteMapper;
-import com.veterinaria.dtos.ConsultaClienteDTO;
-import com.veterinaria.dtos.RegistroClienteDTO;
+import com.veterinaria.dtos.responses.ClienteResponseDTO;
+import com.veterinaria.dtos.requests.ClienteRequestDTO;
 import com.veterinaria.entities.Cliente;
 import com.veterinaria.services.ClienteService;
 
@@ -32,14 +32,14 @@ public class ClienteController {
 	
 	@GetMapping
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
-	public ResponseEntity<Page<ConsultaClienteDTO>> buscarTodosOsClientes(@PageableDefault Pageable pageable) {
+	public ResponseEntity<Page<ClienteResponseDTO>> buscarTodosOsClientes(@PageableDefault Pageable pageable) {
 		
 		return ResponseEntity.ok(clienteService.listarTodosOsClientes(pageable).map(ClienteMapper::fromEntity)); 
 	}
 	
 	@PostMapping
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaClienteDTO> salvarCliente(@RequestBody RegistroClienteDTO dto) {
+	public ResponseEntity<ClienteResponseDTO> salvarCliente(@RequestBody ClienteRequestDTO dto) {
 		
 		Cliente cliente = clienteService.salvarCliente(ClienteMapper.fromDTO(dto));
 		
@@ -48,7 +48,7 @@ public class ClienteController {
 	
 	@GetMapping("{id}")
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
-	public ResponseEntity<ConsultaClienteDTO> buscarCliente(@PathVariable Long id) {
+	public ResponseEntity<ClienteResponseDTO> buscarCliente(@PathVariable Long id) {
 
 		Cliente cliente = clienteService.buscarCliente(id);
 		
@@ -57,8 +57,8 @@ public class ClienteController {
 	
 	@PutMapping("{id}")
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaClienteDTO> atualizarCliente(@RequestBody RegistroClienteDTO dto,
-			@PathVariable Long id) {
+	public ResponseEntity<ClienteResponseDTO> atualizarCliente(@RequestBody ClienteRequestDTO dto,
+                                                               @PathVariable Long id) {
 				
 		Cliente cliente = clienteService.atualizarCliente(ClienteMapper.fromDTO(dto), id);
 		
@@ -67,7 +67,7 @@ public class ClienteController {
 	
 	@DeleteMapping("{id}")
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaClienteDTO> excluirCliente(@PathVariable Long id) {
+	public ResponseEntity<ClienteResponseDTO> excluirCliente(@PathVariable Long id) {
 		
 			clienteService.excluirCliente(id);
 			

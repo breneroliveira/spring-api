@@ -1,14 +1,14 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.requests;
 
-public class RegistroRacaDTO {
+public class RacaRequestDTO {
 
 	private String nome;
 	
-	public RegistroRacaDTO() {
+	public RacaRequestDTO() {
 		
 	}
 
-	public RegistroRacaDTO(String nome) {
+	public RacaRequestDTO(String nome) {
 		this.nome = nome;
 	}
 

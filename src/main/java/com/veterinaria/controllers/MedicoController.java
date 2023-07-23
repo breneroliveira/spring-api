@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.veterinaria.dtos.ConsultaMedicoDTO;
+import com.veterinaria.dtos.responses.MedicoResponseDTO;
 import com.veterinaria.mappers.MedicoMapper;
-import com.veterinaria.dtos.RegistroMedicoDTO;
+import com.veterinaria.dtos.requests.MedicoRequestDTO;
 import com.veterinaria.entities.Medico;
 import com.veterinaria.services.MedicoService;
 
@@ -32,14 +32,14 @@ public class MedicoController {
 	
 	@GetMapping
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
-	public ResponseEntity<Page<ConsultaMedicoDTO>> buscarTodosOsMedicos(@PageableDefault Pageable pageable) {
+	public ResponseEntity<Page<MedicoResponseDTO>> buscarTodosOsMedicos(@PageableDefault Pageable pageable) {
 		
 		return ResponseEntity.ok(medicoService.listarTodosOsMedicos(pageable).map(MedicoMapper::fromEntity)); 
 	}
 	
 	@PostMapping
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaMedicoDTO> salvarMedico(@RequestBody RegistroMedicoDTO dto) {
+	public ResponseEntity<MedicoResponseDTO> salvarMedico(@RequestBody MedicoRequestDTO dto) {
 		
 		Medico medico = medicoService.salvarMedico(MedicoMapper.fromDTO(dto));
 		
@@ -48,7 +48,7 @@ public class MedicoController {
 	
 	@GetMapping("{id}")
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
-	public ResponseEntity<ConsultaMedicoDTO> buscarMedico(@PathVariable Long id) {
+	public ResponseEntity<MedicoResponseDTO> buscarMedico(@PathVariable Long id) {
 
 		Medico medico = medicoService.buscarMedico(id);
 		
@@ -57,8 +57,8 @@ public class MedicoController {
 	
 	@PutMapping("{id}")
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaMedicoDTO> atualizarMedico(@RequestBody RegistroMedicoDTO dto,
-			@PathVariable Long id) {
+	public ResponseEntity<MedicoResponseDTO> atualizarMedico(@RequestBody MedicoRequestDTO dto,
+                                                             @PathVariable Long id) {
 				
 		Medico medico = medicoService.atualizarMedico(MedicoMapper.fromDTO(dto), id);
 		
@@ -67,7 +67,7 @@ public class MedicoController {
 	
 	@DeleteMapping("{id}")
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaMedicoDTO> excluirMedico(@PathVariable Long id) {
+	public ResponseEntity<MedicoResponseDTO> excluirMedico(@PathVariable Long id) {
 		
 			medicoService.excluirMedico(id);
 			

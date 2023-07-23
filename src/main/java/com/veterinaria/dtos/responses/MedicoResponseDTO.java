@@ -1,4 +1,4 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.responses;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -8,8 +8,9 @@ import com.veterinaria.dtos.EnderecoDTO;
 import com.veterinaria.dtos.EspecialidadeDTO;
 import com.veterinaria.entities.Atendimento;
 
-public class RegistroMedicoDTO {
+public class MedicoResponseDTO {
 
+	private Long id;
 	private String crmv;
 	private String nome;
 	private String telefone;
@@ -18,12 +19,13 @@ public class RegistroMedicoDTO {
 	private EspecialidadeDTO especialidade;
 	private Set<Atendimento> atendimentos = new HashSet<>();
 	
-	public RegistroMedicoDTO() {
+	public MedicoResponseDTO() {
 		
 	}
 	
-	public RegistroMedicoDTO(String crmv, String nome, String telefone, Date dataNascimento, EnderecoDTO endereco,
-			EspecialidadeDTO especialidade) {
+	public MedicoResponseDTO(Long id, String crmv, String nome, String telefone, Date dataNascimento,
+							 EnderecoDTO endereco, EspecialidadeDTO especialidade) {
+		this.id = id;
 		this.crmv = crmv;
 		this.nome = nome;
 		this.telefone = telefone;
@@ -32,8 +34,9 @@ public class RegistroMedicoDTO {
 		this.especialidade = especialidade;
 	}
 
-	public RegistroMedicoDTO(String crmv, String nome, String telefone, Date dataNascimento, EnderecoDTO endereco,
-			EspecialidadeDTO especialidade, Set<Atendimento> atendimentos) {
+	public MedicoResponseDTO(Long id, String crmv, String nome, String telefone, Date dataNascimento,
+							 EnderecoDTO endereco, EspecialidadeDTO especialidade, Set<Atendimento> atendimentos) {
+		this.id = id;
 		this.crmv = crmv;
 		this.nome = nome;
 		this.telefone = telefone;
@@ -41,6 +44,14 @@ public class RegistroMedicoDTO {
 		this.endereco = endereco;
 		this.especialidade = especialidade;
 		this.atendimentos = atendimentos;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getCrmv() {

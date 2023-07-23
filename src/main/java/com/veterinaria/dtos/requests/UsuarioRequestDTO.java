@@ -1,16 +1,16 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.requests;
 
-public class RegistroUsuarioDTO {
+public class UsuarioRequestDTO {
 
 	private String email;
 	private String senha;
 	private Long perfilId;
 	
-	public RegistroUsuarioDTO() {
+	public UsuarioRequestDTO() {
 		
 	}
 
-	public RegistroUsuarioDTO(String email, String senha, Long perfilId) {
+	public UsuarioRequestDTO(String email, String senha, Long perfilId) {
 		this.email = email;
 		this.senha = senha;
 		this.perfilId = perfilId;

@@ -1,15 +1,15 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.responses;
 
-public class ConsultaUsuarioDTO {
+public class UsuarioResponseDTO {
 
 	private String email;
 	private String nomePerfil;
 	
-	public ConsultaUsuarioDTO() {
+	public UsuarioResponseDTO() {
 		
 	}
 
-	public ConsultaUsuarioDTO(String email, String nomePerfil) {
+	public UsuarioResponseDTO(String email, String nomePerfil) {
 		this.email = email;
 		this.nomePerfil = nomePerfil;
 	}

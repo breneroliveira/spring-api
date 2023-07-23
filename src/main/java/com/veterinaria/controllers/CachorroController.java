@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.veterinaria.mappers.CachorroMapper;
-import com.veterinaria.dtos.ConsultaCachorroDTO;
-import com.veterinaria.dtos.RegistroCachorroDTO;
+import com.veterinaria.dtos.responses.CachorroResponseDTO;
+import com.veterinaria.dtos.requests.CachorroRequestDTO;
 import com.veterinaria.entities.Cachorro;
 import com.veterinaria.services.CachorroService;
 
@@ -32,14 +32,14 @@ public class CachorroController {
 	
 	@GetMapping
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
-	public ResponseEntity<Page<ConsultaCachorroDTO>> buscarTodosOsCachorros(@PageableDefault Pageable pageable) {
+	public ResponseEntity<Page<CachorroResponseDTO>> buscarTodosOsCachorros(@PageableDefault Pageable pageable) {
 		
 		return ResponseEntity.ok(cachorroService.listarTodosOsCachorros(pageable).map(CachorroMapper::fromEntity)); 
 	}
 	
 	@PostMapping
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaCachorroDTO> salvarCachorro(@RequestBody RegistroCachorroDTO dto) {
+	public ResponseEntity<CachorroResponseDTO> salvarCachorro(@RequestBody CachorroRequestDTO dto) {
 		
 		Cachorro cachorro = cachorroService.salvarCachorro(CachorroMapper.fromDTO(dto));
 		
@@ -48,7 +48,7 @@ public class CachorroController {
 	
 	@GetMapping("{id}")
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
-	public ResponseEntity<ConsultaCachorroDTO> buscarCachorro(@PathVariable Long id) {
+	public ResponseEntity<CachorroResponseDTO> buscarCachorro(@PathVariable Long id) {
 
 		Cachorro cachorro = cachorroService.buscarCachorro(id);
 		
@@ -57,8 +57,8 @@ public class CachorroController {
 	
 	@PutMapping("{id}")
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaCachorroDTO> atualizarCachorro(@RequestBody RegistroCachorroDTO dto,
-			@PathVariable Long id) {
+	public ResponseEntity<CachorroResponseDTO> atualizarCachorro(@RequestBody CachorroRequestDTO dto,
+                                                                 @PathVariable Long id) {
 				
 		Cachorro cachorro = cachorroService.atualizarCachorro(CachorroMapper.fromDTO(dto), id);
 		
@@ -67,7 +67,7 @@ public class CachorroController {
 	
 	@DeleteMapping("{id}")
 	@PreAuthorize("hasAuthority('Admin')")
-	public ResponseEntity<ConsultaCachorroDTO> excluirCachorro(@PathVariable Long id) {
+	public ResponseEntity<CachorroResponseDTO> excluirCachorro(@PathVariable Long id) {
 		
 			cachorroService.excluirCachorro(id);
 			

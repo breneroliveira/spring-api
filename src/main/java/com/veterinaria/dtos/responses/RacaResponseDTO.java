@@ -1,18 +1,18 @@
-package com.veterinaria.dtos;
+package com.veterinaria.dtos.responses;
 
 import java.io.Serializable;
 
-public class ConsultaRacaDTO implements Serializable {
+public class RacaResponseDTO implements Serializable {
 
 	private static final long serialVersionUID = -1528364485370402404L;
 	private Long id;
 	private String nome;
 	
-	public ConsultaRacaDTO() {
+	public RacaResponseDTO() {
 		
 	}
 
-	public ConsultaRacaDTO(Long id, String nome) {
+	public RacaResponseDTO(Long id, String nome) {
 		this.id = id;
 		this.nome = nome;
 	}
