@@ -1,5 +1,7 @@
-package com.veterinaria.dto.raca;
+package com.veterinaria.mappers;
 
+import com.veterinaria.dto.raca.ConsultaRacaDTO;
+import com.veterinaria.dto.raca.RegistroRacaDTO;
 import com.veterinaria.entities.Raca;
 
 public class RacaMapper {

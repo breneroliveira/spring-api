@@ -1,5 +1,6 @@
-package com.veterinaria.dto.especialidade;
+package com.veterinaria.mappers;
 
+import com.veterinaria.dto.especialidade.EspecialidadeDTO;
 import com.veterinaria.entities.Especialidade;
 
 public class EspecialidadeMapper {

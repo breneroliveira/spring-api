@@ -1,5 +1,7 @@
-package com.veterinaria.dto.atendimento;
+package com.veterinaria.mappers;
 
+import com.veterinaria.dto.atendimento.ConsultaAtendimentoDTO;
+import com.veterinaria.dto.atendimento.RegistroAtendimentoDTO;
 import com.veterinaria.entities.Atendimento;
 
 public class AtendimentoMapper {

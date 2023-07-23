@@ -1,5 +1,7 @@
-package com.veterinaria.dto.usuario;
+package com.veterinaria.mappers;
 
+import com.veterinaria.dto.usuario.ConsultaUsuarioDTO;
+import com.veterinaria.dto.usuario.RegistroUsuarioDTO;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.veterinaria.entities.Perfil;

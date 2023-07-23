@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.veterinaria.dto.cliente.ClienteMapper;
+import com.veterinaria.mappers.ClienteMapper;
 import com.veterinaria.dto.cliente.ConsultaClienteDTO;
 import com.veterinaria.dto.cliente.RegistroClienteDTO;
 import com.veterinaria.entities.Cliente;

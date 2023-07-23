@@ -11,7 +11,7 @@ import com.google.common.net.HttpHeaders;
 
 @SpringBootApplication
 @Configuration
-public class DesafioApiApplication {
+public class VeterinariaApplication {
 	
 	@Bean
 	public WebClient webClient(WebClient.Builder builder) {
@@ -23,6 +23,6 @@ public class DesafioApiApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(DesafioApiApplication.class, args);
+		SpringApplication.run(VeterinariaApplication.class, args);
 	}
 }

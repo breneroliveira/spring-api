@@ -31,7 +31,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
-import com.veterinaria.dto.cachorro.CachorroMapper;
+import com.veterinaria.mappers.CachorroMapper;
 import com.veterinaria.dto.cachorro.ConsultaCachorroDTO;
 import com.veterinaria.dto.cachorro.RegistroCachorroDTO;
 import com.veterinaria.entities.Cachorro;

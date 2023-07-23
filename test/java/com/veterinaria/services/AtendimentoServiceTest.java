@@ -29,7 +29,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
-import com.veterinaria.dto.atendimento.AtendimentoMapper;
+import com.veterinaria.mappers.AtendimentoMapper;
 import com.veterinaria.dto.atendimento.ConsultaAtendimentoDTO;
 import com.veterinaria.dto.atendimento.RegistroAtendimentoDTO;
 import com.veterinaria.entities.Atendimento;

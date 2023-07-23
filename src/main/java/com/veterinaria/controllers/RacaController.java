@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.veterinaria.dto.imagem.ConsultaImagemDTO;
 import com.veterinaria.dto.raca.ConsultaRacaDTO;
-import com.veterinaria.dto.raca.RacaMapper;
+import com.veterinaria.mappers.RacaMapper;
 import com.veterinaria.dto.raca.RegistroRacaDTO;
 import com.veterinaria.entities.Raca;
 import com.veterinaria.services.RacaService;
