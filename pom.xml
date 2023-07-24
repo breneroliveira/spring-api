@@ -8,10 +8,10 @@
 		<version>2.7.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gft.veterinaria</groupId>
-	<artifactId>desafio-api</artifactId>
+	<groupId>com.veterinaria</groupId>
+	<artifactId>api-veterinaria</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>desafio-api</name>
+	<name>api-veterinaria</name>
 	<description>API de uma clínica veterinária</description>
 	<properties>
 		<java.version>17</java.version>
