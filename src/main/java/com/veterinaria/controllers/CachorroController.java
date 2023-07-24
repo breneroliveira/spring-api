@@ -1,24 +1,16 @@
 package com.veterinaria.controllers;
 
+import com.veterinaria.dtos.requests.CachorroRequestDTO;
+import com.veterinaria.dtos.responses.CachorroResponseDTO;
+import com.veterinaria.entities.Cachorro;
+import com.veterinaria.mappers.CachorroMapper;
+import com.veterinaria.services.CachorroService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.veterinaria.mappers.CachorroMapper;
-import com.veterinaria.dtos.responses.CachorroResponseDTO;
-import com.veterinaria.dtos.requests.CachorroRequestDTO;
-import com.veterinaria.entities.Cachorro;
-import com.veterinaria.services.CachorroService;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("v1/cachorros")
@@ -34,7 +26,7 @@ public class CachorroController {
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
 	public ResponseEntity<Page<CachorroResponseDTO>> buscarTodosOsCachorros(@PageableDefault Pageable pageable) {
 		
-		return ResponseEntity.ok(cachorroService.listarTodosOsCachorros(pageable).map(CachorroMapper::fromEntity)); 
+		return ResponseEntity.ok(cachorroService.listarTodosOsCachorros(pageable).map(CachorroMapper::fromEntity));
 	}
 	
 	@PostMapping
@@ -68,9 +60,9 @@ public class CachorroController {
 	@DeleteMapping("{id}")
 	@PreAuthorize("hasAuthority('Admin')")
 	public ResponseEntity<CachorroResponseDTO> excluirCachorro(@PathVariable Long id) {
-		
-			cachorroService.excluirCachorro(id);
+
+		cachorroService.excluirCachorro(id);
 			
-			return ResponseEntity.ok().build();
+		return ResponseEntity.ok().build();
 	}
 }

@@ -10,23 +10,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.veterinaria.dtos.AutenticacaoDTO;
 import com.veterinaria.dtos.TokenDTO;
-import com.veterinaria.services.AutenticacaoService;
+import com.veterinaria.servicesImpl.AutenticacaoServiceImpl;
 
 @RestController
 @RequestMapping("v1/auth")
 public class AutenticacaoController {
 
-	private final AutenticacaoService autenticacaoService;
+	private final AutenticacaoServiceImpl autenticacaoServiceImpl;
 
-	public AutenticacaoController(AutenticacaoService autenticacaoService) {
-		this.autenticacaoService = autenticacaoService;
+	public AutenticacaoController(AutenticacaoServiceImpl autenticacaoServiceImpl) {
+		this.autenticacaoServiceImpl = autenticacaoServiceImpl;
 	}
 	
 	@PostMapping
 	public ResponseEntity<TokenDTO> autenticar(@RequestBody AutenticacaoDTO authForm) {
 		
 		try {
-			return ResponseEntity.ok(autenticacaoService.autenticar(authForm));
+			return ResponseEntity.ok(autenticacaoServiceImpl.autenticar(authForm));
 		} catch (AuthenticationException ae) {
 			ae.printStackTrace();
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

@@ -1,24 +1,16 @@
 package com.veterinaria.controllers;
 
+import com.veterinaria.dtos.requests.ClienteRequestDTO;
+import com.veterinaria.dtos.responses.ClienteResponseDTO;
+import com.veterinaria.entities.Cliente;
+import com.veterinaria.mappers.ClienteMapper;
+import com.veterinaria.services.ClienteService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.veterinaria.mappers.ClienteMapper;
-import com.veterinaria.dtos.responses.ClienteResponseDTO;
-import com.veterinaria.dtos.requests.ClienteRequestDTO;
-import com.veterinaria.entities.Cliente;
-import com.veterinaria.services.ClienteService;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("v1/clientes")
@@ -34,7 +26,7 @@ public class ClienteController {
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
 	public ResponseEntity<Page<ClienteResponseDTO>> buscarTodosOsClientes(@PageableDefault Pageable pageable) {
 		
-		return ResponseEntity.ok(clienteService.listarTodosOsClientes(pageable).map(ClienteMapper::fromEntity)); 
+		return ResponseEntity.ok(clienteService.listarTodosOsClientes(pageable).map(ClienteMapper::fromEntity));
 	}
 	
 	@PostMapping
@@ -68,9 +60,9 @@ public class ClienteController {
 	@DeleteMapping("{id}")
 	@PreAuthorize("hasAuthority('Admin')")
 	public ResponseEntity<ClienteResponseDTO> excluirCliente(@PathVariable Long id) {
-		
-			clienteService.excluirCliente(id);
+
+		clienteService.excluirCliente(id);
 			
-			return ResponseEntity.ok().build();
+		return ResponseEntity.ok().build();
 	}
 }

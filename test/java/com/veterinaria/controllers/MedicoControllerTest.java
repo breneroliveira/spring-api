@@ -52,7 +52,7 @@ import com.veterinaria.dtos.medico.RegistroMedicoDTO;
 import com.veterinaria.entities.Endereco;
 import com.veterinaria.entities.Especialidade;
 import com.veterinaria.entities.Medico;
-import com.veterinaria.services.MedicoService;
+import com.veterinaria.servicesImpl.MedicoService;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

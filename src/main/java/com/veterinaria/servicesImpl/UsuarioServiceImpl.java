@@ -1,21 +1,20 @@
-package com.veterinaria.services;
+package com.veterinaria.servicesImpl;
 
-import java.util.Optional;
-
+import com.veterinaria.entities.Usuario;
+import com.veterinaria.repositories.UsuarioRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.veterinaria.entities.Usuario;
-import com.veterinaria.repositories.UsuarioRepository;
+import java.util.Optional;
 
 @Service
-public class UsuarioService implements UserDetailsService {
+public class UsuarioServiceImpl implements UserDetailsService {
 	
 	private UsuarioRepository usuarioRepository;
 	
-	public UsuarioService(UsuarioRepository usuarioRepository) {
+	public UsuarioServiceImpl(UsuarioRepository usuarioRepository) {
 		this.usuarioRepository = usuarioRepository;
 	}
 	

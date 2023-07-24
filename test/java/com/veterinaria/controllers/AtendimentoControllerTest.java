@@ -48,7 +48,7 @@ import com.veterinaria.entities.Cachorro;
 import com.veterinaria.entities.Endereco;
 import com.veterinaria.entities.Especialidade;
 import com.veterinaria.entities.Medico;
-import com.veterinaria.services.AtendimentoService;
+import com.veterinaria.servicesImpl.AtendimentoService;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

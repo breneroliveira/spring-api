@@ -1,22 +1,16 @@
 package com.veterinaria.controllers;
 
+import com.veterinaria.dtos.requests.AtendimentoRequestDTO;
+import com.veterinaria.dtos.responses.AtendimentoResponseDTO;
+import com.veterinaria.entities.Atendimento;
+import com.veterinaria.mappers.AtendimentoMapper;
+import com.veterinaria.services.AtendimentoService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.veterinaria.mappers.AtendimentoMapper;
-import com.veterinaria.dtos.responses.AtendimentoResponseDTO;
-import com.veterinaria.dtos.requests.AtendimentoRequestDTO;
-import com.veterinaria.entities.Atendimento;
-import com.veterinaria.services.AtendimentoService;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("v1/atendimentos")
@@ -32,7 +26,7 @@ public class AtendimentoController {
 	@PreAuthorize("hasAnyAuthority('Admin', 'User')")
 	public ResponseEntity<Page<AtendimentoResponseDTO>> buscarTodosOsAtendimentos(@PageableDefault Pageable pageable) {
 		
-		return ResponseEntity.ok(atendimentoService.listarTodosOsAtendimentos(pageable).map(AtendimentoMapper::fromEntity)); 
+		return ResponseEntity.ok(atendimentoService.listarTodosOsAtendimentos(pageable).map(AtendimentoMapper::fromEntity));
 	}
 	
 	@PostMapping

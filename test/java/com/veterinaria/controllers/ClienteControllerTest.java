@@ -50,7 +50,7 @@ import com.veterinaria.dtos.cliente.RegistroClienteDTO;
 import com.veterinaria.dtos.endereco.EnderecoDTO;
 import com.veterinaria.entities.Cliente;
 import com.veterinaria.entities.Endereco;
-import com.veterinaria.services.ClienteService;
+import com.veterinaria.servicesImpl.ClienteService;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

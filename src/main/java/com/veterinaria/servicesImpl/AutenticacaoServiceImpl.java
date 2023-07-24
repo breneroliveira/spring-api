@@ -1,4 +1,4 @@
-package com.veterinaria.services;
+package com.veterinaria.servicesImpl;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class AutenticacaoService {
+public class AutenticacaoServiceImpl {
 
 	@Lazy @Autowired
 	private AuthenticationManager authManager;

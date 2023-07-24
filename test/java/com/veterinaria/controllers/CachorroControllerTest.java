@@ -51,7 +51,7 @@ import com.veterinaria.entities.Cachorro;
 import com.veterinaria.entities.Cliente;
 import com.veterinaria.entities.Endereco;
 import com.veterinaria.entities.Raca;
-import com.veterinaria.services.CachorroService;
+import com.veterinaria.servicesImpl.CachorroService;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

@@ -46,7 +46,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import com.veterinaria.dtos.raca.ConsultaRacaDTO;
 import com.veterinaria.dtos.raca.RegistroRacaDTO;
 import com.veterinaria.entities.Raca;
-import com.veterinaria.services.RacaService;
+import com.veterinaria.servicesImpl.RacaService;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

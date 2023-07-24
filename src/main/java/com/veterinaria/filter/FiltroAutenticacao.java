@@ -12,17 +12,17 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.veterinaria.entities.Usuario;
-import com.veterinaria.services.AutenticacaoService;
-import com.veterinaria.services.UsuarioService;
+import com.veterinaria.servicesImpl.AutenticacaoServiceImpl;
+import com.veterinaria.servicesImpl.UsuarioServiceImpl;
 
 public class FiltroAutenticacao extends OncePerRequestFilter {
 	
-	private AutenticacaoService autenticacaoService;
-	private UsuarioService usuarioService;
+	private AutenticacaoServiceImpl autenticacaoServiceImpl;
+	private UsuarioServiceImpl usuarioServiceImpl;
 	
-	public FiltroAutenticacao(AutenticacaoService autenticacaoService, UsuarioService usuarioService) {
-		this.autenticacaoService = autenticacaoService;
-		this.usuarioService = usuarioService;
+	public FiltroAutenticacao(AutenticacaoServiceImpl autenticacaoServiceImpl, UsuarioServiceImpl usuarioServiceImpl) {
+		this.autenticacaoServiceImpl = autenticacaoServiceImpl;
+		this.usuarioServiceImpl = usuarioServiceImpl;
 	}
 
 	@Override
@@ -35,9 +35,9 @@ public class FiltroAutenticacao extends OncePerRequestFilter {
 			token = header.substring(7, header.length());
 		}
 		
-		if(autenticacaoService.verificaToken(token)) {
-			Long idUsuario = autenticacaoService.retornarIdUsuario(token);
-			Usuario usuario = usuarioService.buscarUsuarioPorId(idUsuario);
+		if(autenticacaoServiceImpl.verificaToken(token)) {
+			Long idUsuario = autenticacaoServiceImpl.retornarIdUsuario(token);
+			Usuario usuario = usuarioServiceImpl.buscarUsuarioPorId(idUsuario);
 			SecurityContextHolder.getContext()
 								 .setAuthentication(new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities()));
 		}

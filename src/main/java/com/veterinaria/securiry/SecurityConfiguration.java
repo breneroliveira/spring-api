@@ -16,8 +16,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.veterinaria.filter.FiltroAutenticacao;
-import com.veterinaria.services.AutenticacaoService;
-import com.veterinaria.services.UsuarioService;
+import com.veterinaria.servicesImpl.AutenticacaoServiceImpl;
+import com.veterinaria.servicesImpl.UsuarioServiceImpl;
 
 @SuppressWarnings("deprecation")
 @EnableWebSecurity
@@ -26,10 +26,10 @@ import com.veterinaria.services.UsuarioService;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private UsuarioService usuarioService;
+	private UsuarioServiceImpl usuarioServiceImpl;
 	
 	@Autowired
-	private AutenticacaoService autenticacaoService;
+	private AutenticacaoServiceImpl autenticacaoServiceImpl;
 	
 	@Bean
 	protected BCryptPasswordEncoder passwordEncoder() {
@@ -44,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(usuarioService).passwordEncoder(new BCryptPasswordEncoder()); 
+		auth.userDetailsService(usuarioServiceImpl).passwordEncoder(new BCryptPasswordEncoder());
 	}
 	
 	@Override
@@ -67,6 +67,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.and().csrf().disable()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
-			.addFilterBefore(new FiltroAutenticacao(autenticacaoService, usuarioService), UsernamePasswordAuthenticationFilter.class);
+			.addFilterBefore(new FiltroAutenticacao(autenticacaoServiceImpl, usuarioServiceImpl), UsernamePasswordAuthenticationFilter.class);
 	}
 }
